@@ -1,0 +1,72 @@
+comandos usado no curso alura (node.js)
+
+
+1- npm init
+
+//--save serve para ele salvar no package.json, quando alguem baixar nosso projeto e rodar o npm install ja vai baixar todas as dependencias salvas
+2- npm install express -save
+
+
+3- npm install ejs --save
+
+//não tem o "-save" pq e uma coisa local
+//nodemon serve como "observador", qualquer alteração
+//não precisa reiniciar o servidor
+//para executar nodemon nomedoarquivo.js
+4- npm install -g nodemon
+
+//instalando driver banco mysql
+5 - npm install mysql --save
+
+//faz carregamento automatico de rotas
+6- npm install express-load --save
+
+//pega e requisição e preenche o corpo(com os dados passado pelo usuario), "var livro = req.body"(livro.js)
+7-npm install body-parser --save
+
+//para validar campos vindo do front
+8-npm install express-validator
+
+
+//method-override serve p/ substitui o method post p/ delete
+9-npm install method-override
+
+
+--------teste--------
+
+//MOCHA é um framework de testes unitários
+//Para executar basta  "node node_modules\mocha\bin\mocha" no terminal
+8-npm install mocha --save-dev
+
+//facilita a escrita do teste, configurações, assert...
+9-npm install supertest --save-dev
+
+
+
+
+
+
+
+----HEROKU------------
+//primeiro criar repositorio no git, tem que esta no diretorio do proejto
+git init
+
+//depois adiciono os arquivos
+git add .
+
+//por ultimo faço commit, como estou no windows então o comentario e em ""
+git commit -m "first commit"
+
+
+
+//criando aplicação no heroku
+heroku apps:create <nome da aplicacao>
+
+
+//criando banco de dados cleardb, ignite e o serviço mais basico p/ heroku
+heroku addons:create cleardb:ignite
+
+
+--------START------
+//configurar script "start" no package.json
+npm start

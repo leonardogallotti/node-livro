@@ -1,0 +1,61 @@
+<html>
+	<head>
+	    <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+	</head>
+
+	<body>       
+        <div class="container">
+        	<h1 class="well well-lg" align="center">Consultar livros</h1>
+
+	        <div class="row">
+	        	<div class="col-sm-2 col-sm-offset-3">               
+		       		<a  href="/" class="btn btn-primary"><span class="glyphicon glyphicon-home">HOME</span></a>
+		        </div>
+	            
+	            <div class="col-sm-2 col-sm-offset-3">               
+		           	<a  href="livros/cadastro" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-save">Cadastrar</span></a>
+		        </div>	   
+	        </div>
+	    </div>   
+
+		<br></br>
+        
+        <div class="container">
+		    <div class="row">
+		        <div class="col-sm-8 col-sm-offset-2">
+		            <div class="panel panel-primary">
+       
+				        <div class="panel-heading">
+				        	<div class="panel-title" align="center">Livros cadastrados</div>
+				       	</div>
+
+				            <table class="table table-hover">
+				                <tr>
+				                    <td>Titulo</td>
+				                    <td>Descrição</td>
+				                    <td>Valor</td>
+				                    <td>Remover</td>
+				                </tr> 	
+				               
+					            <% lista.forEach(function(item) { %>
+							        <tr>
+								        <td><%= item.titulo%></td>
+								        <td><%= item.descricao%></td>
+								        <td><%= item.preco%></td>
+								        <td>
+								            <form action="/livros?_method=DELETE" method="post">
+					                            <input type="hidden" name="id" value="<%= item.id %>" />
+					                            <input class="btn btn-raised btn-danger" type="submit" value="Remover" />
+					                        </form>
+								        </td> 
+								    </tr>
+							    <% }); %>		   
+				           </table>
+					</div>
+				</div>
+			</div>
+        </div>
+	</body> 
+</html>
